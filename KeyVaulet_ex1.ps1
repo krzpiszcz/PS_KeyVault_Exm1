@@ -11,3 +11,4 @@ $dbconnectionstring = 'dbconnection'
 
 #create new resource group
 New-AzResourceGroup -Name $ResourceGroupName -Location $Location -Verbose -Force 
+#not yet done
