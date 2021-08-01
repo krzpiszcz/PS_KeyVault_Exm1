@@ -9,6 +9,18 @@ $dbconnectionstring = 'dbconnection'
 #Connect-AzAccount
 #Get-AzSubscription
 
-#create new resource group
-New-AzResourceGroup -Name $ResourceGroupName -Location $Location -Verbose -Force 
-#not yet done
+#Resource group
+## New-AzResourceGroup -Name $ResourceGroupName -Location $Location -Verbose -Force 
+#Get-AzResourceGroup
+
+##create SQL Server and Database
+New-AzSqlServer -ServerName $SQLServerName `
+                -ResourceGroupName $ResourceGroupName  `
+                -Location $Location `
+                -ServerVersion '12.0' `
+                -SqlAdministratorCredentials (Get-Credential) `
+                -Verbose
+                
+#New-AzSqlDatabase -DatabaseName $DBName `
+#                    -ServerName $SQLServerName `
+#                    -
