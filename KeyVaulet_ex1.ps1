@@ -51,7 +51,7 @@ install-package microsoft.data.SqlClient
 
 ##Below two commands will create a secret value for the database connection string and will add it to the Azure key vault as a secret.
 ##Once done, we do not need to keep connection string (sensitive information) in the script to connect to the database.
-#$secretvalue = ConvertTo-SecureString -String 'Server=tcp:aslsoftsqlserver.database.windows.net,1433;Initial Catalog=MyDB;Persist Security Info=False;User ID=sqladmin;Password=Pikdata44;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;' -AsPlainText -Force
+#$secretvalue = ConvertTo-SecureString -String 'Server=tcp:<serrrver>.database.windows.net,1433;Initial Catalog=MyDB;Persist Security Info=False;User ID=<user>;Password=<pass>;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;' -AsPlainText -Force
 #Set-AzKeyVaultSecret -VaultName $KeyVaultName -Name $dbconnectionstring -SecretValue $secretvalue 
 
 
